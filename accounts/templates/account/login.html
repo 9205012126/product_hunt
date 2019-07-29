@@ -1,0 +1,26 @@
+
+<body>
+{%extends 'base.html'%}
+
+{%block content%}
+{% if error%}
+{{error}}
+{%endif%}
+<h1>login</h1>
+<form method="POST" action="{% url 'login' %}" >
+    {%csrf_token%}
+  <div class="form-group">
+    <label for="formGroupExampleInput">userid</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" aria-describedby="emailHelp" placeholder="enter user name" name="username">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
+  </div>
+
+
+  <button type="submit" class="btn btn-primary">login in </button>
+</form>
+{%endblock%}
+</body>
